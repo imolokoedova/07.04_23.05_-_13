@@ -10,26 +10,16 @@ int numberB = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите третье число:");
 int numberC = Convert.ToInt32(Console.ReadLine());
 
-if (numberA < numberB)
+int max = numberA;
 
-    ;
+if (numberB > max)
+{
+    max = numberB;
+}
 
+if (numberC > max)
+{
+    max = numberC;
+}
 
-if (numberB < numberC)
-
-    int numberC = int.MaxValue;
-
-
-Console.WriteLine (int.MaxValue);
-
-// if (numberA < numberB)
-//{
-//    numberB == max;
-//}
-
-//else if (numberB < numberC)
-//{
-//    numberC == max; 
-//}
-
-//Console.WriteLine ($"max = " + Max);
+Console.WriteLine(max);
