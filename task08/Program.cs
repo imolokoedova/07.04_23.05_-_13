@@ -8,6 +8,7 @@ int count = 1;
 
 while (count <= numberA)
 {
+
     if (count % 2 == 0)
     {
         Console.Write(count + " ");
@@ -16,3 +17,7 @@ while (count <= numberA)
     count++;
 }
 
+if (numberA < 1)
+    {
+        Console.WriteLine("Натуральное число - целое положительное число больше нуля.");
+    }
