@@ -5,18 +5,14 @@
 
 int WriteSecondDigit(int num)
 {
-    return (num % 100);
+    int first = num/100;
+    int third = num%10;
+    int result = (num - first*100 - third)/10;
+    return (result);
 }
 
 Console.WriteLine("Введите трехзначное число:");
 int number = Convert.ToInt32(Console.ReadLine());
-if (number >= 100 && <= 999) ;
-{
-    int result WriteSecondDigit(int num);
-    Console.WriteLine(result);
-}
+int result = WriteSecondDigit(number);
+Console.WriteLine(number >= 100 && number <= 999 ? result : "Вы ввели не трехзначное число.");
 
-else
-{
-    Console.WriteLine("Вы ввели не трехзначное число.");
-}
