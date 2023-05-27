@@ -7,16 +7,17 @@
 // 8 4 2 4
 // 5 2 6 7
 
-// Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка
+// Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 
+// 1 строка
 
-int[,] matrix = CreateMatrixRndInt(4, 4, -10, 10);
+int[,] matrix = CreateMatrixRndInt(3, 4, -10, 10);
 PrintMatrix(matrix);
 Console.WriteLine();
-int[] array = SumOfElements (matrix);
-PrintArray(array);
-Console.WriteLine();
-int index = IndexOfMinElement(array);
-Console.WriteLine(index);
+int[] array = SumOfElementsInRow(matrix);
+// PrintArray(array);
+// Console.WriteLine();
+int index = FindIndexOfMin(array);
+Console.WriteLine($"   {index + 1} строка");
 
 
 
@@ -55,12 +56,12 @@ void PrintMatrix(int[,] matrix)
 
 // метод 3
 
-int[] SumOfElements(int[,] matrix)
+int[] SumOfElementsInRow(int[,] matrix)
 {
     int[] arr = new int[matrix.GetLength(0)];
-    int sum = 0;
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
+        int sum = 0;
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             sum += matrix[i, j];
@@ -72,7 +73,7 @@ int[] SumOfElements(int[,] matrix)
 
 // метод 4
 
-int IndexOfMinElement(int[] arr)
+int FindIndexOfMin(int[] arr)
 {
     int index = 0;
     int min = arr[0];
@@ -83,7 +84,7 @@ int IndexOfMinElement(int[] arr)
             index = i;
             min = arr[i];
         }
-        
+
     }
     return index;
 }
