@@ -12,10 +12,7 @@
 int[,] matrix = CreateMatrixRndInt(4, 4, -10, 10);
 PrintMatrix(matrix);
 Console.WriteLine();
-for (int i = 0; i < matrix.GetLength(0); i++)
-{
-    SortElementsToMin(matrix, i);
-}
+SortMatrix(matrix);
 PrintMatrix(matrix);
 
 
@@ -54,7 +51,7 @@ void PrintMatrix(int[,] matrix)
 
 // метод 3
 
-void SortElementsToMin(int[,] matrix, int i)
+void SortRow(int[,] matrix, int i)
 {
     for (int k = 0; k < matrix.GetLength(1); k++)
     {
@@ -71,3 +68,12 @@ void SortElementsToMin(int[,] matrix, int i)
 
 }
 
+// метод 4
+
+void SortMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        SortRow(matrix, i);
+    }
+}
