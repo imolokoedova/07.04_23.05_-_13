@@ -13,6 +13,9 @@ Console.WriteLine(resultBin);
 }
 else Console.WriteLine("вы ввели неверное число");
 
+
+// метод
+
 int DecToBin(int num)
 {
 int count = 1;
@@ -25,6 +28,11 @@ count = count * 10;
 }
 return result;
 }
+
+
+
+
+
 
 // второй метод через string
 
